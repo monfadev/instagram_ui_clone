@@ -1,4 +1,4 @@
-# My Notes
+# Instagram App
 
 > FLUTTER UI - Instagram Clone App UI Design
 
