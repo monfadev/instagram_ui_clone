@@ -5,7 +5,7 @@
 ## Features
 
 - Navigation
-- Function validatation
+- Function validation
 
 ## Techstack
 
