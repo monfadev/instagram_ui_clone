@@ -2,6 +2,8 @@
 
 > FLUTTER UI - Instagram Clone App UI Design
 
+<img src="https://i.ibb.co/ZG7YDBt/2-Instagram-UI-Clone-Home-Screen.png" alt="2-Instagram-UI-Clone-Home-Screen" border="0"></a>
+
 ## Features
 
 - Navigation
