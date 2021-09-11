@@ -1,7 +1,7 @@
 name: instagram_ui_clone
 description: A new Flutter project.
 
-publish_to: 'none' 
+publish_to: 'none'
 
 version: 1.0.0+1
 
@@ -9,9 +9,10 @@ environment:
   sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
+  cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.2
+  flutter_staggered_grid_view: ^0.4.0
 
 dev_dependencies:
   flutter_test:
@@ -24,3 +25,4 @@ flutter:
     - assets/avatars/
     - assets/feeds/
     - assets/icons/
+    - assets/search/

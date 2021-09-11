@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:instagram_ui_clone/screens/data/feed_data.dart';
 import 'package:instagram_ui_clone/screens/data/instastory_data.dart';
 import 'package:instagram_ui_clone/shared/shared.dart';

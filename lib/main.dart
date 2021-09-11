@@ -8,8 +8,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,7 +15,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: whiteColor,
       ),
       debugShowCheckedModeBanner: false,
-      home: MainScreen(),
+      home: SignInScreen(),
     );
   }
 }
