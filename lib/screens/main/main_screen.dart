@@ -37,6 +37,7 @@ class _MainScreenState extends State<MainScreen> {
         child: pages[_currentIndex],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: (_currentIndex == 2) ? blackColor : whiteColor,
         showSelectedLabels: false,
         showUnselectedLabels: false,
         type: BottomNavigationBarType.fixed,
@@ -51,6 +52,7 @@ class _MainScreenState extends State<MainScreen> {
             icon: Image.asset(
               'assets/icons/home_outline.png',
               scale: 2,
+              color: (_currentIndex == 2) ? whiteColor : blackColor,
             ),
             activeIcon: Image.asset(
               'assets/icons/home_filled.png',
@@ -62,6 +64,7 @@ class _MainScreenState extends State<MainScreen> {
             icon: Image.asset(
               'assets/icons/search_outline.png',
               scale: 2,
+              color: (_currentIndex == 2) ? whiteColor : blackColor,
             ),
             activeIcon: Image.asset(
               'assets/icons/search_filled.png',
@@ -73,6 +76,7 @@ class _MainScreenState extends State<MainScreen> {
             icon: Image.asset(
               'assets/icons/reels_outline.png',
               scale: 2,
+              color: (_currentIndex == 2) ? whiteColor : blackColor,
             ),
             label: 'Reels',
           ),
@@ -80,6 +84,7 @@ class _MainScreenState extends State<MainScreen> {
             icon: Image.asset(
               'assets/icons/shop_outline.png',
               scale: 2,
+              color: (_currentIndex == 2) ? whiteColor : blackColor,
             ),
             activeIcon: Image.asset(
               'assets/icons/shop_filled.png',

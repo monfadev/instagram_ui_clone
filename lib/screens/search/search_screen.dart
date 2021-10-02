@@ -9,6 +9,7 @@ class SearchScreen extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
+            pinned: true,
             backgroundColor: whiteColor,
             toolbarHeight: 60,
             elevation: 0,
