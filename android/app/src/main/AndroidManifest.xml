@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.instagram_ui_clone">
+    package="com.monfadev.instagram_ui_clone">
    <application
         android:label="instagram_ui_clone"
         android:icon="@mipmap/ic_launcher">
