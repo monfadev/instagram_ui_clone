@@ -48,7 +48,7 @@ class CustomSearchBar extends StatelessWidget {
         IconButton(
           onPressed: () {},
           icon: Icon(
-            Icons.class__outlined,
+            Icons.class_outlined,
             color: blackColor,
           ),
         ),
