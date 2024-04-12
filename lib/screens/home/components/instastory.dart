@@ -3,16 +3,16 @@ part of '../../screens.dart';
 class Instastory extends StatefulWidget {
   final List<Map<String, dynamic>> mapInstastory;
 
-  const Instastory({Key? key, required this.mapInstastory}) : super(key: key);
+  const Instastory({super.key, required this.mapInstastory});
 
   @override
-  _InstastoryState createState() => _InstastoryState();
+  State<Instastory> createState() => _InstastoryState();
 }
 
 class _InstastoryState extends State<Instastory> {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 95,
       width: double.infinity,
       child: ListView.builder(
@@ -26,8 +26,7 @@ class _InstastoryState extends State<Instastory> {
             isAdmin: widget.mapInstastory[index]['is_admin'],
             isInstastory: widget.mapInstastory[index]['is_instastory'],
             isStorySeen: widget.mapInstastory[index]['is_story_seen'],
-            isRightMargin:
-                (index == widget.mapInstastory.length - 1) ? defaultMargin : 0,
+            isRightMargin: (index == widget.mapInstastory.length - 1) ? defaultMargin : 0,
           );
         },
       ),
@@ -45,7 +44,7 @@ class InstastoryItem extends StatelessWidget {
   final double isRightMargin;
 
   const InstastoryItem({
-    Key? key,
+    super.key,
     required this.avatar,
     required this.username,
     required this.isUser,
@@ -53,7 +52,7 @@ class InstastoryItem extends StatelessWidget {
     required this.isInstastory,
     required this.isStorySeen,
     required this.isRightMargin,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -71,23 +70,23 @@ class InstastoryItem extends StatelessWidget {
                     child: Container(
                       height: 65,
                       width: 65,
-                      padding: EdgeInsets.all(4),
+                      padding: const EdgeInsets.all(4),
                       decoration: BoxDecoration(
                         image: (isStorySeen == true)
-                            ? DecorationImage(
+                            ? const DecorationImage(
                                 image: AssetImage(
                                   'assets/icons/stroke_seen_solid.png',
                                 ),
                               )
                             : (isAdmin == true)
-                                ? DecorationImage(
+                                ? const DecorationImage(
                                     image: AssetImage(
                                       'assets/icons/stroke_new_dash.png',
                                     ),
                                   )
                                 : DecorationImage(
                                     image: (isInstastory == true)
-                                        ? AssetImage(
+                                        ? const AssetImage(
                                             'assets/icons/stroke_on_solid.png',
                                           )
                                         : AssetImage(
@@ -117,11 +116,11 @@ class InstastoryItem extends StatelessWidget {
                       child: Container(
                         height: 26,
                         width: 26,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           shape: BoxShape.circle,
                           color: whiteColor,
                         ),
-                        child: Icon(
+                        child: const Icon(
                           Icons.add_circle_sharp,
                           color: Colors.blue,
                         ),
@@ -130,7 +129,7 @@ class InstastoryItem extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             Container(
               width: 75,
               margin: EdgeInsets.only(left: 14, right: isRightMargin),

@@ -1,10 +1,10 @@
 part of '../screens.dart';
 
 class SignInScreen extends StatefulWidget {
-  const SignInScreen({Key? key}) : super(key: key);
+  const SignInScreen({super.key});
 
   @override
-  _SignInScreenState createState() => _SignInScreenState();
+  State<SignInScreen> createState() => _SignInScreenState();
 }
 
 class _SignInScreenState extends State<SignInScreen> {
@@ -31,10 +31,9 @@ class _SignInScreenState extends State<SignInScreen> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: ConstrainedBox(
-            constraints: BoxConstraints(
-                maxHeight: MediaQuery.of(context).size.height - 90),
+            constraints: BoxConstraints(maxHeight: MediaQuery.of(context).size.height - 90),
             child: Container(
-              margin: EdgeInsets.symmetric(horizontal: defaultMargin),
+              margin: const EdgeInsets.symmetric(horizontal: defaultMargin),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -42,13 +41,13 @@ class _SignInScreenState extends State<SignInScreen> {
                     'assets/logo/instagram.png',
                     height: 50,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                   Container(
                     height: 50,
                     width: double.infinity,
-                    padding: EdgeInsets.symmetric(horizontal: 15),
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
                     decoration: BoxDecoration(
                       color: greyColor,
                       borderRadius: BorderRadius.circular(8),
@@ -63,7 +62,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Phone number, username or email',
-                        hintStyle: TextStyle(
+                        hintStyle: const TextStyle(
                           color: greyDarkColor,
                           fontSize: 14,
                         ),
@@ -74,23 +73,21 @@ class _SignInScreenState extends State<SignInScreen> {
                               _emailController.clear();
                             });
                           },
-                          child: _isEmailValid
-                              ? Icon(Icons.close_rounded)
-                              : SizedBox(),
+                          child: _isEmailValid ? const Icon(Icons.close_rounded) : const SizedBox(),
                         ),
                       ),
                       onChanged: (value) {
                         setState(() {
-                          _isEmailValid = value.length >= 1;
+                          _isEmailValid = value.isNotEmpty;
                         });
                       },
                     ),
                   ),
-                  SizedBox(height: 15),
+                  const SizedBox(height: 15),
                   Container(
                     height: 50,
                     width: double.infinity,
-                    padding: EdgeInsets.symmetric(horizontal: 15),
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
                     decoration: BoxDecoration(
                       color: greyColor,
                       borderRadius: BorderRadius.circular(8),
@@ -106,7 +103,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Password',
-                        hintStyle: TextStyle(
+                        hintStyle: const TextStyle(
                           color: greyDarkColor,
                           fontSize: 14,
                         ),
@@ -116,20 +113,18 @@ class _SignInScreenState extends State<SignInScreen> {
                               _isHidePassword = !_isHidePassword;
                             });
                           },
-                          child: (!_isHidePassword)
-                              ? Icon(Icons.visibility_off)
-                              : Icon(Icons.visibility),
+                          child: (!_isHidePassword) ? const Icon(Icons.visibility_off) : const Icon(Icons.visibility),
                         ),
                       ),
                       onChanged: (value) {
                         setState(() {
-                          _isPasswordValid = value.length >= 1;
+                          _isPasswordValid = value.isNotEmpty;
                         });
                       },
                     ),
                   ),
-                  SizedBox(height: 20),
-                  Row(
+                  const SizedBox(height: 20),
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Text(
@@ -142,20 +137,18 @@ class _SignInScreenState extends State<SignInScreen> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 25),
-                  Container(
+                  const SizedBox(height: 25),
+                  SizedBox(
                     height: 45,
                     width: double.infinity,
                     child: _isLogin
-                        ? Center(
+                        ? const Center(
                             child: CircularProgressIndicator(),
                           )
                         : ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              primary: _isPasswordValid && _isEmailValid
-                                  ? blueColor
-                                  : blueSkyColor,
-                              onSurface: blueColor,
+                              backgroundColor: _isPasswordValid && _isEmailValid ? blueColor : blueSkyColor,
+                              foregroundColor: blueColor,
                               elevation: 0,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(8),
@@ -168,12 +161,12 @@ class _SignInScreenState extends State<SignInScreen> {
                                       _isPasswordValid = true;
                                       _isLogin = true;
                                     });
-                                    Future.delayed(Duration(seconds: 2), () {
+                                    Future.delayed(const Duration(seconds: 2), () {
                                       setState(() {
                                         Navigator.pushReplacement(
                                           context,
                                           MaterialPageRoute(
-                                            builder: (context) => MainScreen(),
+                                            builder: (context) => const MainScreen(),
                                           ),
                                         );
                                         _isLogin = false;
@@ -181,7 +174,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                     });
                                   }
                                 : null,
-                            child: Text(
+                            child: const Text(
                               'Log In',
                               style: TextStyle(
                                 color: whiteColor,
@@ -189,8 +182,8 @@ class _SignInScreenState extends State<SignInScreen> {
                             ),
                           ),
                   ),
-                  SizedBox(height: 20),
-                  Row(
+                  const SizedBox(height: 20),
+                  const Row(
                     children: [
                       Expanded(
                         child: Divider(
@@ -215,13 +208,13 @@ class _SignInScreenState extends State<SignInScreen> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 25),
+                  const SizedBox(height: 25),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image.asset('assets/logo/facebook.png', height: 20),
-                      SizedBox(width: 10),
-                      Text(
+                      const SizedBox(width: 10),
+                      const Text(
                         'Log In With Facebook',
                         style: TextStyle(
                           color: blueColor,
@@ -238,7 +231,7 @@ class _SignInScreenState extends State<SignInScreen> {
       ),
       bottomNavigationBar: Container(
         height: 45,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           border: Border(
             top: BorderSide(
               color: greyBorderColor,
@@ -246,7 +239,7 @@ class _SignInScreenState extends State<SignInScreen> {
             ),
           ),
         ),
-        child: Row(
+        child: const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(

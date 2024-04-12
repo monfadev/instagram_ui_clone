@@ -1,7 +1,27 @@
 part of '../screens.dart';
 
 class SearchScreen extends StatelessWidget {
-  const SearchScreen({Key? key}) : super(key: key);
+  const SearchScreen({super.key});
+
+  static const tiles = [
+    GridTile(2, 2),
+    GridTile(2, 1),
+    GridTile(1, 2),
+    GridTile(1, 1),
+    GridTile(2, 2),
+    GridTile(1, 2),
+    GridTile(1, 1),
+    GridTile(3, 1),
+    GridTile(1, 1),
+    GridTile(1, 1),
+    GridTile(1, 1),
+    GridTile(1, 1),
+    GridTile(1, 1),
+    GridTile(1, 1),
+    GridTile(1, 1),
+    GridTile(1, 1),
+    GridTile(1, 1),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +39,7 @@ class SearchScreen extends StatelessWidget {
                 color: Colors.grey.withOpacity(0.1),
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: TextField(
+              child: const TextField(
                 decoration: InputDecoration(
                   border: InputBorder.none,
                   hintText: 'Search',
@@ -36,27 +56,21 @@ class SearchScreen extends StatelessWidget {
               ),
             ),
           ),
-          // add package sliver_staggered_grid
-          SliverStaggeredGrid.count(
-            crossAxisCount: 3,
-            mainAxisSpacing: 1,
-            crossAxisSpacing: 1,
-            children: List.generate(
-              17,
-              (index) => _gridItems(index),
+          SliverToBoxAdapter(
+            child: StaggeredGrid.count(
+              crossAxisCount: 4,
+              mainAxisSpacing: 4,
+              crossAxisSpacing: 4,
+              children: [
+                ...tiles.mapIndexed((index, tile) {
+                  return StaggeredGridTile.count(
+                    crossAxisCellCount: tile.crossAxisCount,
+                    mainAxisCellCount: tile.mainAxisCount,
+                    child: _gridItems(index),
+                  );
+                }),
+              ],
             ),
-            staggeredTiles: List.generate(17, (index) {
-              int value = index % 18;
-              if (value == 2) {
-                // Reels
-                return StaggeredTile.count(1, 2);
-              } else if (value == 8) {
-                // IG TV
-                return StaggeredTile.count(2, 2);
-              }
-              // Anything
-              return StaggeredTile.count(1, 1);
-            }),
           ),
         ],
       ),
@@ -70,10 +84,10 @@ Widget _gridItems(int index) {
     children: [
       Image.asset(
         'assets/search/$index.png',
-        fit: BoxFit.cover,
+        fit: BoxFit.fill,
       ),
       if (index % 3 == 0)
-        Padding(
+        const Padding(
           padding: EdgeInsets.all(5),
           child: Align(
             alignment: Alignment.topRight,
@@ -86,7 +100,7 @@ Widget _gridItems(int index) {
         )
       else if (index == 2)
         Padding(
-          padding: EdgeInsets.all(8),
+          padding: const EdgeInsets.all(8),
           child: Image.asset(
             'assets/icons/reels_outline.png',
             alignment: Alignment.bottomLeft,
@@ -95,7 +109,7 @@ Widget _gridItems(int index) {
           ),
         )
       else
-        Padding(
+        const Padding(
           padding: EdgeInsets.all(8),
           child: Align(
             alignment: Alignment.topRight,
@@ -108,4 +122,10 @@ Widget _gridItems(int index) {
         ),
     ],
   );
+}
+
+class GridTile {
+  const GridTile(this.crossAxisCount, this.mainAxisCount);
+  final int crossAxisCount;
+  final int mainAxisCount;
 }

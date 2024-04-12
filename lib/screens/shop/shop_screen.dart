@@ -1,7 +1,7 @@
 part of '../screens.dart';
 
 class ShopScreen extends StatefulWidget {
-  const ShopScreen({Key? key}) : super(key: key);
+  const ShopScreen({super.key});
 
   @override
   State<ShopScreen> createState() => _ShopScreenState();
@@ -49,7 +49,7 @@ class _ShopScreenState extends State<ShopScreen> {
                     color: Colors.grey.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: TextField(
+                  child: const TextField(
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       hintText: "Search",
@@ -68,7 +68,7 @@ class _ShopScreenState extends State<ShopScreen> {
               ),
             ),
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: SizedBox(height: 10),
           ),
           SliverPersistentHeader(
@@ -81,7 +81,7 @@ class _ShopScreenState extends State<ShopScreen> {
                 children: category
                     .map(
                       (e) => Padding(
-                        padding: EdgeInsets.only(left: defaultMargin),
+                        padding: const EdgeInsets.only(left: defaultMargin),
                         child: Category(e),
                       ),
                     )
@@ -89,7 +89,7 @@ class _ShopScreenState extends State<ShopScreen> {
               ),
             ),
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: SizedBox(height: 10),
           ),
           SliverGrid(
@@ -103,8 +103,8 @@ class _ShopScreenState extends State<ShopScreen> {
                   ),
                 ),
                 child: index == 0
-                    ? Padding(
-                        padding: const EdgeInsets.all(8),
+                    ? const Padding(
+                        padding: EdgeInsets.all(8),
                         child: Text(
                           "Continue Shopping",
                           style: TextStyle(
@@ -113,19 +113,18 @@ class _ShopScreenState extends State<ShopScreen> {
                           ),
                         ),
                       )
-                    : SizedBox(),
+                    : const SizedBox(),
               );
             }, childCount: 6),
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               crossAxisSpacing: 1,
               mainAxisSpacing: 1,
             ),
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: Padding(
-              padding: const EdgeInsets.only(
-                  left: defaultMargin, top: 20, bottom: defaultMargin),
+              padding: EdgeInsets.only(left: defaultMargin, top: 20, bottom: defaultMargin),
               child: Text(
                 "People from creators you follow >",
                 style: TextStyle(
@@ -136,10 +135,10 @@ class _ShopScreenState extends State<ShopScreen> {
             ),
           ),
           SliverToBoxAdapter(
-            child: Container(
+            child: SizedBox(
               height: 200,
               child: ListView.builder(
-                padding: EdgeInsets.only(left: defaultMargin),
+                padding: const EdgeInsets.only(left: defaultMargin),
                 scrollDirection: Axis.horizontal,
                 itemCount: 6,
                 itemBuilder: (context, index) {
@@ -165,13 +164,13 @@ class _ShopScreenState extends State<ShopScreen> {
                                     Colors.black.withOpacity(.3),
                                     Colors.transparent,
                                   ],
-                                  end: Alignment(0, -.75),
-                                  begin: Alignment(0, .1),
+                                  end: const Alignment(0, -.75),
+                                  begin: const Alignment(0, .1),
                                 ),
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
+                            const Padding(
+                              padding: EdgeInsets.all(8.0),
                               child: Align(
                                 alignment: Alignment.bottomLeft,
                                 child: Text(
@@ -185,14 +184,14 @@ class _ShopScreenState extends State<ShopScreen> {
                           ],
                         ),
                       ),
-                      SizedBox(width: 10),
+                      const SizedBox(width: 10),
                     ],
                   );
                 },
               ),
             ),
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: SizedBox(height: 20),
           ),
           SliverGrid(
@@ -206,8 +205,8 @@ class _ShopScreenState extends State<ShopScreen> {
                   ),
                 ),
                 child: index == 0
-                    ? Padding(
-                        padding: const EdgeInsets.all(8),
+                    ? const Padding(
+                        padding: EdgeInsets.all(8),
                         child: Text(
                           "Continue Shopping",
                           style: TextStyle(
@@ -216,19 +215,18 @@ class _ShopScreenState extends State<ShopScreen> {
                           ),
                         ),
                       )
-                    : SizedBox(),
+                    : const SizedBox(),
               );
             }, childCount: 6),
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               crossAxisSpacing: 1,
               mainAxisSpacing: 1,
             ),
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: Padding(
-              padding: const EdgeInsets.only(
-                  left: defaultMargin, top: 20, bottom: defaultMargin),
+              padding: EdgeInsets.only(left: defaultMargin, top: 20, bottom: defaultMargin),
               child: Text(
                 "People from creators you follow >",
                 style: TextStyle(
@@ -239,10 +237,10 @@ class _ShopScreenState extends State<ShopScreen> {
             ),
           ),
           SliverToBoxAdapter(
-            child: Container(
+            child: SizedBox(
               height: 200,
               child: ListView.builder(
-                padding: EdgeInsets.only(left: defaultMargin),
+                padding: const EdgeInsets.only(left: defaultMargin),
                 scrollDirection: Axis.horizontal,
                 itemCount: 6,
                 itemBuilder: (context, index) {
@@ -268,13 +266,13 @@ class _ShopScreenState extends State<ShopScreen> {
                                     Colors.black.withOpacity(.3),
                                     Colors.transparent,
                                   ],
-                                  end: Alignment(0, -.75),
-                                  begin: Alignment(0, .1),
+                                  end: const Alignment(0, -.75),
+                                  begin: const Alignment(0, .1),
                                 ),
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
+                            const Padding(
+                              padding: EdgeInsets.all(8.0),
                               child: Align(
                                 alignment: Alignment.bottomLeft,
                                 child: Text(
@@ -288,7 +286,7 @@ class _ShopScreenState extends State<ShopScreen> {
                           ],
                         ),
                       ),
-                      SizedBox(width: 10),
+                      const SizedBox(width: 10),
                     ],
                   );
                 },

@@ -1,7 +1,7 @@
 part of '../screens.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
           Container(
             height: 50,
             width: 25,
-            margin: EdgeInsets.only(left: defaultMargin),
+            margin: const EdgeInsets.only(left: defaultMargin),
             child: Image.asset(
               'assets/icons/plus_outline.png',
               scale: 2,
@@ -28,7 +28,7 @@ class HomeScreen extends StatelessWidget {
           Container(
             height: 50,
             width: 25,
-            margin: EdgeInsets.only(left: 25),
+            margin: const EdgeInsets.only(left: 25),
             child: Image.asset(
               'assets/icons/love_outline.png',
               scale: 2,
@@ -37,16 +37,16 @@ class HomeScreen extends StatelessWidget {
           Container(
             height: 50,
             width: 25,
-            margin: EdgeInsets.only(left: 25),
+            margin: const EdgeInsets.only(left: 25),
             child: Image.asset(
               'assets/icons/message_outline.png',
               scale: 2,
             ),
           ),
-          SizedBox(width: defaultMargin),
+          const SizedBox(width: defaultMargin),
         ],
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Column(
           children: [
             // INSTASTORY

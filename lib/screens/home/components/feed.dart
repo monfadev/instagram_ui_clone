@@ -2,10 +2,10 @@ part of '../../screens.dart';
 
 class Feed extends StatefulWidget {
   final List<Map<String, dynamic>> mapFeed;
-  const Feed({Key? key, required this.mapFeed}) : super(key: key);
+  const Feed({super.key, required this.mapFeed});
 
   @override
-  _FeedState createState() => _FeedState();
+  State<Feed> createState() => _FeedState();
 }
 
 class _FeedState extends State<Feed> {
@@ -13,7 +13,7 @@ class _FeedState extends State<Feed> {
   Widget build(BuildContext context) {
     return ListView.builder(
       shrinkWrap: true,
-      physics: NeverScrollableScrollPhysics(),
+      physics: const NeverScrollableScrollPhysics(),
       scrollDirection: Axis.vertical,
       itemCount: widget.mapFeed.length,
       itemBuilder: (context, index) {
@@ -43,7 +43,7 @@ class FeedItem extends StatelessWidget {
   final int totalLike;
 
   const FeedItem({
-    Key? key,
+    super.key,
     required this.avatar,
     required this.username,
     required this.location,
@@ -52,28 +52,28 @@ class FeedItem extends StatelessWidget {
     required this.isAvatarFollower,
     required this.isFollower,
     required this.totalLike,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Container(
-          margin: EdgeInsets.symmetric(horizontal: defaultMargin),
+          margin: const EdgeInsets.symmetric(horizontal: defaultMargin),
           child: Row(
             children: [
               Image.asset(
                 avatar,
                 height: 40,
               ),
-              SizedBox(width: 10),
+              const SizedBox(width: 10),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       username,
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Color(0xFF262626),
                         fontWeight: bold,
                         fontSize: 16,
@@ -83,7 +83,7 @@ class FeedItem extends StatelessWidget {
                     ),
                     Text(
                       location,
-                      style: TextStyle(fontSize: 14),
+                      style: const TextStyle(fontSize: 14),
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -97,7 +97,7 @@ class FeedItem extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         ConstrainedBox(
           constraints: BoxConstraints(
             maxWidth: MediaQuery.of(context).size.width,
@@ -107,9 +107,9 @@ class FeedItem extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         Container(
-          margin: EdgeInsets.symmetric(horizontal: defaultMargin),
+          margin: const EdgeInsets.symmetric(horizontal: defaultMargin),
           child: Row(
             children: [
               Expanded(
@@ -119,12 +119,12 @@ class FeedItem extends StatelessWidget {
                       'assets/icons/love_outline.png',
                       scale: 2,
                     ),
-                    SizedBox(width: 20),
+                    const SizedBox(width: 20),
                     Image.asset(
                       'assets/icons/comment_outline.png',
                       scale: 2,
                     ),
-                    SizedBox(width: 20),
+                    const SizedBox(width: 20),
                     Image.asset(
                       'assets/icons/share_outline.png',
                       scale: 2,
@@ -139,16 +139,16 @@ class FeedItem extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         Container(
-          margin: EdgeInsets.symmetric(horizontal: defaultMargin),
+          margin: const EdgeInsets.symmetric(horizontal: defaultMargin),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
                 children: [
                   ClipOval(
-                    child: Container(
+                    child: SizedBox(
                       height: 26,
                       width: 26,
                       child: Image.asset(
@@ -156,27 +156,27 @@ class FeedItem extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(width: 5),
+                  const SizedBox(width: 5),
                   Expanded(
                     child: Text.rich(
                       TextSpan(
                         text: 'Liked by ',
                         children: [
                           TextSpan(
-                            text: isFollower + ' ',
-                            style: TextStyle(
+                            text: '$isFollower ',
+                            style: const TextStyle(
                               fontWeight: bold,
                             ),
                           ),
-                          TextSpan(
-                            text: 'and' + ' ',
+                          const TextSpan(
+                            text: 'and' ' ',
                             style: TextStyle(
                               fontWeight: normal,
                             ),
                           ),
                           TextSpan(
-                            text: totalLike.toString() + ' others',
-                            style: TextStyle(
+                            text: '$totalLike others',
+                            style: const TextStyle(
                               fontWeight: bold,
                             ),
                           ),
@@ -191,9 +191,9 @@ class FeedItem extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(height: 5),
+        const SizedBox(height: 5),
         Container(
-          margin: EdgeInsets.symmetric(horizontal: defaultMargin),
+          margin: const EdgeInsets.symmetric(horizontal: defaultMargin),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -202,14 +202,14 @@ class FeedItem extends StatelessWidget {
                   Expanded(
                     child: Text.rich(
                       TextSpan(
-                        text: username + ' ',
-                        style: TextStyle(
+                        text: '$username ',
+                        style: const TextStyle(
                           fontWeight: bold,
                         ),
                         children: [
                           TextSpan(
                             text: description,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontWeight: normal,
                             ),
                           ),
@@ -224,9 +224,9 @@ class FeedItem extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(height: 5),
+        const SizedBox(height: 5),
         Container(
-          margin: EdgeInsets.symmetric(horizontal: defaultMargin),
+          margin: const EdgeInsets.symmetric(horizontal: defaultMargin),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -245,9 +245,9 @@ class FeedItem extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(height: 5),
+        const SizedBox(height: 5),
         Container(
-          margin: EdgeInsets.symmetric(horizontal: defaultMargin),
+          margin: const EdgeInsets.symmetric(horizontal: defaultMargin),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -262,7 +262,7 @@ class FeedItem extends StatelessWidget {
                           fontSize: 12,
                           color: Colors.grey[500],
                         ),
-                        children: [
+                        children: const [
                           TextSpan(
                             text: 'See Translation',
                             style: TextStyle(
@@ -281,7 +281,7 @@ class FeedItem extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
       ],
     );
   }

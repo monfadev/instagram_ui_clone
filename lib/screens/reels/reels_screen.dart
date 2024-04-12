@@ -1,7 +1,7 @@
 part of '../screens.dart';
 
 class ReelsScreen extends StatelessWidget {
-  const ReelsScreen({Key? key}) : super(key: key);
+  const ReelsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class ReelsScreen extends StatelessWidget {
         elevation: 0,
         centerTitle: false,
         backgroundColor: Colors.transparent,
-        title: Text(
+        title: const Text(
           "Reels",
           style: TextStyle(
             fontSize: 26,
@@ -21,7 +21,7 @@ class ReelsScreen extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.photo_camera_outlined,
               color: whiteColor,
             ),
@@ -50,8 +50,8 @@ class ReelsScreen extends StatelessWidget {
                         Colors.black.withOpacity(.3),
                         Colors.transparent,
                       ],
-                      begin: Alignment(0, -.75),
-                      end: Alignment(0, .1),
+                      begin: const Alignment(0, -.75),
+                      end: const Alignment(0, .1),
                     ),
                   ),
                 ),
@@ -62,12 +62,12 @@ class ReelsScreen extends StatelessWidget {
                         Colors.black.withOpacity(.3),
                         Colors.transparent,
                       ],
-                      end: Alignment(0, -.75),
-                      begin: Alignment(0, .1),
+                      end: const Alignment(0, -.75),
+                      begin: const Alignment(0, .1),
                     ),
                   ),
                 ),
-                Column(
+                const Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Row(

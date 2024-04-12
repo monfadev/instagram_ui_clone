@@ -2,8 +2,7 @@ part of '../../screens.dart';
 
 class CustomSearchBar extends StatelessWidget {
   final bool isShowSearch;
-  const CustomSearchBar({required this.isShowSearch, Key? key})
-      : super(key: key);
+  const CustomSearchBar({required this.isShowSearch, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +19,7 @@ class CustomSearchBar extends StatelessWidget {
                 color: Colors.grey.withOpacity(0.1),
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: TextField(
+              child: const TextField(
                 decoration: InputDecoration(
                   border: InputBorder.none,
                   hintText: "Search",
@@ -36,7 +35,7 @@ class CustomSearchBar extends StatelessWidget {
                 ),
               ),
             )
-          : Text(
+          : const Text(
               "Shop",
               style: TextStyle(
                 color: blackColor,
@@ -47,14 +46,14 @@ class CustomSearchBar extends StatelessWidget {
       actions: [
         IconButton(
           onPressed: () {},
-          icon: Icon(
+          icon: const Icon(
             Icons.class_outlined,
             color: blackColor,
           ),
         ),
         IconButton(
           onPressed: () {},
-          icon: Icon(
+          icon: const Icon(
             Icons.menu,
             color: blackColor,
           ),

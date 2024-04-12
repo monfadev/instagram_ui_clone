@@ -1,7 +1,7 @@
 part of '../screens.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({Key? key}) : super(key: key);
+  const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class ProfileScreen extends StatelessWidget {
                 elevation: 0,
                 title: Row(
                   children: [
-                    Text(
+                    const Text(
                       "monfadev",
                       style: TextStyle(
                         color: blackColor,
@@ -26,7 +26,7 @@ class ProfileScreen extends StatelessWidget {
                         fontSize: 24,
                       ),
                     ),
-                    SizedBox(width: 5),
+                    const SizedBox(width: 5),
                     Container(
                       height: 20,
                       width: 24,
@@ -34,7 +34,7 @@ class ProfileScreen extends StatelessWidget {
                         color: Colors.red,
                         borderRadius: BorderRadius.circular(15),
                       ),
-                      child: Center(
+                      child: const Center(
                         child: Text(
                           "9+",
                           style: TextStyle(
@@ -49,16 +49,16 @@ class ProfileScreen extends StatelessWidget {
                   Container(
                     height: 50,
                     width: 25,
-                    margin: EdgeInsets.only(left: defaultMargin),
+                    margin: const EdgeInsets.only(left: defaultMargin),
                     child: Image.asset(
                       "assets/icons/plus_outline.png",
                       scale: 2,
                     ),
                   ),
-                  SizedBox(width: 5),
+                  const SizedBox(width: 5),
                   IconButton(
                     onPressed: () {},
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.menu,
                       color: blackColor,
                       size: 28,
@@ -75,13 +75,12 @@ class ProfileScreen extends StatelessWidget {
                         Container(
                           width: 90,
                           height: 90,
-                          margin:
-                              EdgeInsets.symmetric(horizontal: defaultMargin),
+                          margin: const EdgeInsets.symmetric(horizontal: defaultMargin),
                           child: Stack(
                             children: [
                               ClipOval(
                                 child: Container(
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     shape: BoxShape.circle,
                                     image: DecorationImage(
                                       fit: BoxFit.cover,
@@ -98,11 +97,11 @@ class ProfileScreen extends StatelessWidget {
                                 child: Container(
                                   height: 26,
                                   width: 26,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     color: whiteColor,
                                     shape: BoxShape.circle,
                                   ),
-                                  child: Icon(
+                                  child: const Icon(
                                     Icons.add_circle_sharp,
                                     color: Colors.blue,
                                   ),
@@ -114,14 +113,14 @@ class ProfileScreen extends StatelessWidget {
                         follow("12", "Posts"),
                         follow("1.152", "Followers"),
                         follow("500", "Following"),
-                        SizedBox(width: 20),
+                        const SizedBox(width: 20),
                       ],
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Container(
                       width: 100,
-                      margin: EdgeInsets.symmetric(horizontal: defaultMargin),
-                      child: Text(
+                      margin: const EdgeInsets.symmetric(horizontal: defaultMargin),
+                      child: const Text(
                         "monfadev",
                         style: TextStyle(
                           fontWeight: medium,
@@ -130,10 +129,10 @@ class ProfileScreen extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
-                    SizedBox(height: 5),
+                    const SizedBox(height: 5),
                     Container(
                       width: 100,
-                      margin: EdgeInsets.symmetric(horizontal: defaultMargin),
+                      margin: const EdgeInsets.symmetric(horizontal: defaultMargin),
                       child: Text(
                         "@rfprivatestore",
                         style: TextStyle(
@@ -145,10 +144,10 @@ class ProfileScreen extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
-                    SizedBox(height: 5),
+                    const SizedBox(height: 5),
                     Container(
                       width: 100,
-                      margin: EdgeInsets.symmetric(horizontal: defaultMargin),
+                      margin: const EdgeInsets.symmetric(horizontal: defaultMargin),
                       child: Text(
                         "@monfadev",
                         style: TextStyle(
@@ -160,10 +159,9 @@ class ProfileScreen extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
-                    SizedBox(height: 5),
+                    const SizedBox(height: 5),
                     Padding(
-                      padding:
-                          const EdgeInsets.symmetric(horizontal: defaultMargin),
+                      padding: const EdgeInsets.symmetric(horizontal: defaultMargin),
                       child: Row(
                         children: [
                           Expanded(
@@ -171,13 +169,13 @@ class ProfileScreen extends StatelessWidget {
                               style: TextButton.styleFrom(
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(3),
-                                  side: BorderSide(
+                                  side: const BorderSide(
                                     color: greyBorderColor,
                                   ),
                                 ),
                               ),
                               onPressed: () {},
-                              child: Text(
+                              child: const Text(
                                 "Edit Profile",
                                 style: TextStyle(
                                   color: blackColor,
@@ -185,20 +183,20 @@ class ProfileScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-                          SizedBox(width: 5),
-                          Container(
+                          const SizedBox(width: 5),
+                          SizedBox(
                             width: 40,
                             child: TextButton(
                               style: TextButton.styleFrom(
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(3),
-                                  side: BorderSide(
+                                  side: const BorderSide(
                                     color: greyBorderColor,
                                   ),
                                 ),
                               ),
                               onPressed: () {},
-                              child: Icon(
+                              child: const Icon(
                                 Icons.expand_more_outlined,
                                 size: 20,
                                 color: blackColor,
@@ -208,8 +206,8 @@ class ProfileScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SizedBox(height: 5),
-                    Container(
+                    const SizedBox(height: 5),
+                    SizedBox(
                       height: 95,
                       child: ListView(
                         scrollDirection: Axis.horizontal,
@@ -220,27 +218,24 @@ class ProfileScreen extends StatelessWidget {
                               Container(
                                 width: 65,
                                 height: 65,
-                                margin: EdgeInsets.symmetric(
-                                    horizontal: defaultMargin),
+                                margin: const EdgeInsets.symmetric(horizontal: defaultMargin),
                                 child: Stack(
                                   children: [
                                     ClipOval(
                                       child: Container(
-                                        padding: EdgeInsets.all(4),
+                                        padding: const EdgeInsets.all(4),
                                         height: 65,
                                         width: 65,
-                                        decoration: BoxDecoration(
+                                        decoration: const BoxDecoration(
                                           image: DecorationImage(
-                                            image: AssetImage(
-                                                "assets/icons/stroke_seen_solid.png"),
+                                            image: AssetImage("assets/icons/stroke_seen_solid.png"),
                                           ),
                                         ),
                                         child: Container(
-                                          decoration: BoxDecoration(
+                                          decoration: const BoxDecoration(
                                             shape: BoxShape.circle,
                                             image: DecorationImage(
-                                              image: AssetImage(
-                                                  "assets/search/0.png"),
+                                              image: AssetImage("assets/search/0.png"),
                                               fit: BoxFit.cover,
                                             ),
                                           ),
@@ -250,13 +245,11 @@ class ProfileScreen extends StatelessWidget {
                                   ],
                                 ),
                               ),
-                              SizedBox(height: 3),
-                              Container(
-                                child: Text(
-                                  "Highlights",
-                                  textAlign: TextAlign.center,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
+                              const SizedBox(height: 3),
+                              const Text(
+                                "Highlights",
+                                textAlign: TextAlign.center,
+                                overflow: TextOverflow.ellipsis,
                               ),
                             ],
                           ),
@@ -269,15 +262,13 @@ class ProfileScreen extends StatelessWidget {
                                   shape: BoxShape.circle,
                                   border: Border.all(color: greyBorderColor),
                                 ),
-                                child: Icon(Icons.add),
+                                child: const Icon(Icons.add),
                               ),
-                              SizedBox(height: 3),
-                              Container(
-                                child: Text(
-                                  "New",
-                                  textAlign: TextAlign.center,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
+                              const SizedBox(height: 3),
+                              const Text(
+                                "New",
+                                textAlign: TextAlign.center,
+                                overflow: TextOverflow.ellipsis,
                               ),
                             ],
                           ),
@@ -292,7 +283,7 @@ class ProfileScreen extends StatelessWidget {
                 delegate: PersistentHeader(
                   mnExtent: 50,
                   mxExtent: 50,
-                  child: TabBar(
+                  child: const TabBar(
                     labelColor: blackColor,
                     unselectedLabelColor: Colors.grey,
                     indicatorColor: blackColor,
@@ -330,7 +321,7 @@ class ProfileScreen extends StatelessWidget {
                         ),
                       );
                     }, childCount: 17),
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 3,
                       crossAxisSpacing: 1,
                       mainAxisSpacing: 1,
@@ -352,7 +343,7 @@ class ProfileScreen extends StatelessWidget {
                         ),
                       );
                     }, childCount: 17),
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 3,
                       crossAxisSpacing: 1,
                       mainAxisSpacing: 1,
@@ -373,14 +364,14 @@ class ProfileScreen extends StatelessWidget {
         children: [
           Text(
             count,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 18,
               fontWeight: bold,
             ),
           ),
           Text(
             text,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 16,
               fontWeight: medium,
             ),

@@ -3,7 +3,7 @@ part of '../../screens.dart';
 class Category extends StatelessWidget {
   final String text;
 
-  const Category(this.text, {Key? key}) : super(key: key);
+  const Category(this.text, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,19 +14,19 @@ class Category extends StatelessWidget {
       ),
       child: Row(
         children: [
-          SizedBox(width: 10),
+          const SizedBox(width: 10),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
               text,
-              style: TextStyle(
+              style: const TextStyle(
                 color: blackColor,
                 fontWeight: bold,
                 fontSize: 16,
               ),
             ),
           ),
-          SizedBox(width: 10),
+          const SizedBox(width: 10),
         ],
       ),
     );
